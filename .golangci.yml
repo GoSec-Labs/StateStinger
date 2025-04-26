@@ -1,0 +1,54 @@
+# Configuration for golangci-lint
+linters:
+  enable:
+    - deadcode
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unused
+    - varcheck
+    - gofmt
+    - goimports
+    - misspell
+    - unparam
+    - prealloc
+    - unconvert
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  gofmt:
+    simplify: true
+  goimports:
+    local-prefixes: github.com/GoSec-Labs/StateStinger 
+  govet:
+    check-shadowing: true
+    enable-all: true
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - errcheck
+        - gosec
+        - unparam
+
+  # Maximum issues count per one linter
+  max-issues-per-linter: 50
+  # Maximum count of issues with the same text
+  max-same-issues: 3
+
+run:
+  # Timeout for analysis, e.g. 30s, 5m, default is 1m
+  timeout: 5m
+  # Include test files
+  tests: true
+  # Skip directories
+  skip-dirs:
+    - vendor
+    - examples

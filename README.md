@@ -1,4 +1,6 @@
 # StateStinger: 
+**StateStinger** is a fuzzing engine focused on **state machine security** in Go-powered blockchains like Cosmos SDK. It injects randomized or malformed inputs into key transaction and state transition logic to uncover **critical bugs**, **invalid state transitions**, and **consensus-breaking behaviors**.
+
 
 Ci:Passin {Icon}
 
